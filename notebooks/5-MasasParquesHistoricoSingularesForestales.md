@@ -2,6 +2,7 @@
 
 This module describes the data elements related to tree inventory dataset.
 
+
 <p align="center">
     <a href="../images/arbolado_5.png" target="_blank">
         <img src="../images/arbolado_5.png">

@@ -1,6 +1,7 @@
 ### Semantic model figure
 
-This module describes the data elements related to tree inventiry stored in a biobank
+This module describes the data elements related to tree inventory dataset.
+
 
 <p align="center">
     <a href="../images/arbolado_4.png" target="_blank">
