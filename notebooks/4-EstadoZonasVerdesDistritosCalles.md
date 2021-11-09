@@ -21,11 +21,6 @@ This module describes the data elements related to tree inventiry stored in a bi
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 
-:identifier_ a sio:SIO_000115 ;
-    sio:SIO_000020 :specimen_role_ ;
-    sio:SIO_000300 "uid_000008"^^xsd:string .
-
-
 :nombre_distrito  a :District, sio:Township ;
     sio:label "Moratalaz"^^xsd:string ;
     sio:contains :collection_especies .
