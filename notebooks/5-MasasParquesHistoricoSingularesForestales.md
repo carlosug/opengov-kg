@@ -21,22 +21,35 @@ This module describes the data elements related to tree inventory dataset.
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix wiki: <http://en.wikipedia.org/wiki/> .
 
-:nombre_distrito a :District ;
-    sio:similarTo sio:Township ;
+:parque a sio:Site ;
     sio:isLocatedIn :georeferencing ;
-    sio:label "Moratalaz"^^xsd:string ;
-    sio:contains :nombre_especie ;
-    sio:collection  :nombre_distrito_nombre_especie ;
-    sio:hasMember :especie_name .
+    dc:title "Retiro"^^xsd:string ;
+    sio:collection  :parque_especie_predominante ;
+    sio:contains :especie_predominante ;
+    sio:hasMember :especie_predominante .
 
-:nombre_distrito_nombre_especie a sio:collection ;
-    dc:title "Moratalaz-Populus_nigra"^^xsd:string ;
+
+:parque_especie_predominante a sio:collection ;
+    dc:title "Retiro-Populus_nigra"^^xsd:string ;
     sio:hasAttribute :unidades .
+
+:statistics_ a sio:DimensionalQuantity ;
+    sio:MemberCount :unidades_year ;
+    sio:SurfaceArea :_m2 .
 
 :unidades_year a sio:MemberCount ;
     sio:hasValue "unidades_year"^^xsd:integer ;
     sio:hasUnit obo:UO_0000189 ;
     sio:measuredAt "_year"^^xsd:date .
+
+:_m2 a sio:SurfaceArea ;
+    sio:hasValue "272.0"^^xsd:float ,
+         "303.0"^^xsd:float ,
+         "328.0"^^xsd:float ;
+    sio:hasUnit obo:UO_0000082 ; # mts2
+    sio:measuredAt "2017-01-01"^^xsd:date,
+        "2019-01-01"^^xsd:date,
+        "2020-01-01"^^xsd:date .
 
 
 # <!-- map UniqueIdentifier with WIKI and gbif database -->
