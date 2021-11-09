@@ -3,8 +3,8 @@
 This module describes the data elements related to tree inventiry stored in a biobank
 
 <p align="center">
-    <a href="../images/arbolado_1.png" target="_blank">
-        <img src="../images/arbolado_1.png">
+    <a href="../images/arbolado_3.png" target="_blank">
+        <img src="../images/arbolado_3.png">
     </a>
 </p>
 
@@ -14,37 +14,34 @@ This module describes the data elements related to tree inventiry stored in a bi
 
 ```ttl
 
-@prefix : <http://purl.org/ejp-rd/cde/v020/example-rdf/> .
-@prefix obo: <http://purl.obolibrary.org/obo/> . 
+@prefix esgreen: <https://w3id.org/esgreen/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sio: <http://semanticscience.org/resource/> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix dc: <http://purl.org/dc/elements/1.1/> .
-@prefix wiki: <http://en.wikipedia.org/wiki/> .
+@prefix obo: <http://purl.obolibratory.org/obo> .
 
-:parque_name a sio:Site ;
-    sio:isLocatedIn :parque_name ;
-    dc:title "Retiro"^^xsd:string ;
-    sio:collection  :parque_name_especie_names ;
-    sio:contains :especie_name ;
-    sio:hasMember :especie_name .
 
-:parque_name_especie_names a sio:collection ;
-    dc:title "Retiro-Populus_nigra"^^xsd:string ;
-    sio:hasAttribute :unidades .
+esgreen:capricho_de_la_alameda_de_osuna a sio:site ;
+    rdfs:label "capricho_de_la_alameda_de_osuna"^^xsd:string .
 
-:unidades a sio:MemberCount ;
-    sio:hasValue "unidades_year"^^xsd:integer ;
+esgreen:collection-of-trees-locatedin-capricho_de_la_alameda_de_osuna a sio:Collection .
+
+esgreen:collection-of-trees-locatedin-capricho_de_la_alameda_de_osuna-life-Status-joven a sio:LifeStatus,
+        sio:MemberCount ;
+    sio:hasQuality "joven" ;
     sio:hasUnit obo:UO_0000189 ;
-    sio:measuredAt "_year"^^xsd:date .
+    sio:hasValue 558.0,
+        668.0 ;
+    sio:measuredAt "2018-01-01"^^xsd:date,
+        "2019-01-01"^^xsd:date .
 
-
-# <!-- map UniqueIdentifier with WIKI and gbif database -->
-
-:especie a :habitatSpecies ;
-# :especie a sio:Object .
-    sio:UniqueIdentifier :key ;
-    sio:label :especie_name ;
-    :seeAlso wiki:especie_name .
+esgreen:collection-of-trees-locatedin-capricho_de_la_alameda_de_osuna-life-Status-joven a sio:DimensionalQuantity ;
+    sio:hasQuality "joven" ;
+    sio:hasUnit obo:UO_0000007 ;
+    sio:hasValue "40.0"^^xsd:float ;
+    sio:measuredAt "2017-01-01"^^xsd:date .
 
 ```
 
@@ -68,9 +65,9 @@ This module describes the data elements related to tree inventiry stored in a bi
 
 
 ### Mapping:
-[Python Script](https://github.com/carlosug/opengov-kg/blob/main/etl/generate_rdf2.py)
+[Python Script](https://github.com/carlosug/opengov-kg/blob/main/etl/generate_rdf3.py)
 ### Output:
-[RDF File](https://github.com/carlosug/opengov-kg/blob/main/etl/outputs/rdflib-output2.ttl)
+[RDF File](https://github.com/carlosug/opengov-kg/blob/main/etl/outputs/rdflib-output3.ttl)
 
 ### CHALLENGES AND TODO:
 * Data cleaning: remove latin character and others _(*&(&#))_, unnecessary rows as total and aggregate values. [see data-cleaning.py](https://github.com/carlosug/opengov-kg/blob/main/etl/data-cleaning.py)

@@ -3,8 +3,8 @@
 This module describes the data elements related to tree inventory dataset.
 
 <p align="center">
-    <a href="../images/arbolado_3.png" target="_blank">
-        <img src="../images/arbolado_3.png">
+    <a href="../images/arbolado_2.png" target="_blank">
+        <img src="../images/arbolado_2.png">
     </a>
 </p>
 
@@ -65,9 +65,9 @@ This module describes the data elements related to tree inventory dataset.
 
 
 ### Mapping:
-[Python Script](https://github.com/carlosug/opengov-kg/blob/main/etl/generate_rdf3.py)
+[Python Script](https://github.com/carlosug/opengov-kg/blob/main/etl/generate_rdf2.py)
 ### Output:
-[RDF File](https://github.com/carlosug/opengov-kg/blob/main/etl/outputs/rdflib-output3.ttl)
+[RDF File](https://github.com/carlosug/opengov-kg/blob/main/etl/outputs/rdflib-output2.ttl)
 
 ### CHALLENGES AND TODO:
 * Remove unnecessary rows as total, num district and aggregate values.
