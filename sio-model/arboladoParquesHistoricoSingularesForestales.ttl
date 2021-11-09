@@ -5,14 +5,14 @@
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix wiki: <http://en.wikipedia.org/wiki/> .
 
-:parque_name a sio:Site ;
-    sio:isLocatedIn :parque_name ;
+:parque a sio:Site ;
+    sio:isLocatedIn :georeferencing ;
     dc:title "Retiro"^^xsd:string ;
-    sio:collection  :parque_name_especie_names ;
+    sio:collection  :parque_especie ;
     sio:contains :especie_name ;
     sio:hasMember :especie_name .
 
-:parque_name_especie_names a sio:collection ;
+:parque_especie a sio:collection ;
     dc:title "Retiro-Populus_nigra"^^xsd:string ;
     sio:hasAttribute :unidades .
 

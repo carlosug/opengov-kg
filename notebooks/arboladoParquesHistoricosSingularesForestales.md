@@ -50,6 +50,18 @@ This module describes the data elements related to tree inventiry stored in a bi
 
 ***
 
+### Data Description
+
+
+| Original variable name | New variable name | Description                                             | Type   | Use                | SIO Term | Other term |
+| ---------------------- | ----------------- | ------------------------------------------------------- | ------ | ------------------ | --------- | --------- |
+| PARQUE                 | park              | The unique ID name of the park on which tree is located | `string` | To locate the tree | [Site](https://vemonet.github.io/semanticscience/browse/class-siosite.html) |
+| ESPECIE                | scientific_name   | Botanical name for the dominant specie                  | `string` | To group by taxon  | [MaterialEntity](https://vemonet.github.io/semanticscience/browse/class-siomaterialentity.html) | Specie |
+| UNIDADES YEAR          | count             | Number of tree from same type                           | `int`    | To count/sum       | [MemberCount](https://vemonet.github.io/semanticscience/browse/class-siomembercount.html) | |
+
+### Output:
+[RDF File](https://github.com/carlosug/esgreen-kg/blob/main/etl/outputs/rdflib-output.ttl)
+
 ### CHALLENGES AND TODO
 * Data cleaning: remove latin character and others _(*&(&#))_, unnecessary rows as total and aggregate values. [see data-cleaning.py](https://github.com/carlosug/opengov-kg/blob/main/etl/data-cleaning.py)
 * All entities uses SIO schema but **specie** is not clear yet.
