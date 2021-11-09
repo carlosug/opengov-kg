@@ -3,18 +3,33 @@
 
 > To make **BIODIVERSITY** data Interoperable (the <b>I</b> in FAIR).
 
-## Research questions
+## SPARQL Research questions
 * 1. **city center** most abundant organisms.
 * 2. **outside** city center.
 * 3. **areas** with least and most diverse species  diversity (Shannon Index).
-
+* 4. **Diversity Index**:  we can measure how evenly diversity exists in your tree inventory.
 ---
 
 ## Inputs
 A total of 18 datasets originally from [Madrid Green Data Space](https://mgds.oeg.fi.upm.es/datasets.html) are used to generate the Ontology. These datasets consist of measures (e.g., number of trees) and dimensions describing the measures (e.g., regions)
 
-- [Raw Datasets](data/inputs)
-- [Clean Dataset](data/preprocessing)
+- [Raw Datasets](https://github.com/carlosug/opengov-kg/tree/main/etl/data/inputs)
+- [Clean Dataset](https://github.com/carlosug/opengov-kg/tree/main/etl/data/inputs/preprocessing)
+
+### Other external datasets:
+We will map each specie with global identifier within biodiversity database (e.g. [wikidata API](https://www.wikidata.org/w/api.php?action=wbsearchentities&search=pinus&language=en) or [Global Biodiversity Information Facility](https://www.gbif.org/species/2684241). 
+
+[see data-argumentation.py](https://github.com/carlosug/opengov-kg/blob/main/etl/data-argumentation.py)
+
+
+- [Tree data](https://github.com/carlosug/opengov-kg/blob/main/etl/data/inputs/preprocessing/normalized.csv)
+    + Geographical location
+    + Scientific or species name
+    + Genus name
+    + Family name
+    + Global Identifier
+
+[Open Tree of Life](https://opentreeoflife.github.io/) or [Encyclopedia of Life](https://eol.org/) are some other free and open biodiversity data.
 
 ## Data Model
 Concepts and properties are annotated with the [Semanticscience  Integrated Ontology](https://bioportal.bioontology.org/ontologies/SIO/).
