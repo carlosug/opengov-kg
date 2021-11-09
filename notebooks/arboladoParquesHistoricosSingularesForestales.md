@@ -59,6 +59,11 @@ This module describes the data elements related to tree inventiry stored in a bi
 | ESPECIE                | scientific_name   | Botanical name for the dominant specie                  | `string` | To group by taxon  | [MaterialEntity](https://vemonet.github.io/semanticscience/browse/class-siomaterialentity.html) | Specie |
 | UNIDADES YEAR          | count             | Number of tree from same type                           | `int`    | To count/sum       | [MemberCount](https://vemonet.github.io/semanticscience/browse/class-siomembercount.html) | |
 
+
+### Mapping:
+
+[Python Script](https://github.com/carlosug/esgreen-kg/blob/main/etl/outputs/generate_rdf2.py)
+
 ### Output:
 [RDF File](https://github.com/carlosug/esgreen-kg/blob/main/etl/outputs/rdflib-output.ttl)
 
