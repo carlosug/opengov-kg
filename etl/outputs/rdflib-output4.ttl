@@ -5,25 +5,25 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-esgreen:arganzuela a sio:site ;
+esgreen:arganzuela a sio:SpatialRegion ;
     rdfs:label "arganzuela" .
 
-esgreen:barajas a sio:site ;
+esgreen:barajas a sio:SpatialRegion ;
     rdfs:label "barajas" .
 
-esgreen:carabanchel a sio:site ;
+esgreen:carabanchel a sio:SpatialRegion ;
     rdfs:label "carabanchel" .
 
-esgreen:centro a sio:site ;
+esgreen:centro a sio:SpatialRegion ;
     rdfs:label "centro" .
 
-esgreen:chamartin a sio:site ;
+esgreen:chamartin a sio:SpatialRegion ;
     rdfs:label "chamartin" .
 
-esgreen:chamberi a sio:site ;
+esgreen:chamberi a sio:SpatialRegion ;
     rdfs:label "chamberi" .
 
-esgreen:ciudad_lineal a sio:site ;
+esgreen:ciudad_lineal a sio:SpatialRegion ;
     rdfs:label "ciudad_lineal" .
 
 esgreen:collection-of-trees-locatedin-arganzuela a sio:Collection .
@@ -1574,25 +1574,25 @@ esgreen:collection-of-trees-locatedin-villaverde-phenology-life-cycles-viejo a s
         "2019-01-01"^^xsd:date,
         "2020-01-01"^^xsd:date .
 
-<https://w3id.org/esgreen/datos_incluidos_del_ci5_(unidades_arboreas_de_zonas_verdes,_arbolado_viario_y_arbolado_de_zzvv_con_tipologia_viaria)> a sio:site ;
+<https://w3id.org/esgreen/datos_incluidos_del_ci5_(unidades_arboreas_de_zonas_verdes,_arbolado_viario_y_arbolado_de_zzvv_con_tipologia_viaria)> a sio:SpatialRegion ;
     rdfs:label "datos_incluidos_del_ci5_(unidades_arboreas_de_zonas_verdes,_arbolado_viario_y_arbolado_de_zzvv_con_tipologia_viaria)" .
 
-<https://w3id.org/esgreen/en_edad_fenologica_=_otros_se_consideran_los_arboles_clasificados_como_decrepitos> a sio:site ;
+<https://w3id.org/esgreen/en_edad_fenologica_=_otros_se_consideran_los_arboles_clasificados_como_decrepitos> a sio:SpatialRegion ;
     rdfs:label "en_edad_fenologica_=_otros_se_consideran_los_arboles_clasificados_como_\"decrepitos\"" .
 
-<https://w3id.org/esgreen/en_edad_fenologica_=_otros_se_consideran_los_arboles_clasificados_como_decrepitos,_los_tocones_y_los_arboles_en_proceso_de_clasificacion> a sio:site ;
+<https://w3id.org/esgreen/en_edad_fenologica_=_otros_se_consideran_los_arboles_clasificados_como_decrepitos,_los_tocones_y_los_arboles_en_proceso_de_clasificacion> a sio:SpatialRegion ;
     rdfs:label "en_edad_fenologica_=_otros_se_consideran_los_arboles_clasificados_como_\"decrepitos\",_los_tocones_y_los_arboles_en_proceso_de_clasificacion" .
 
-esgreen:fuencarral_-_el_pardo a sio:site ;
+esgreen:fuencarral_-_el_pardo a sio:SpatialRegion ;
     rdfs:label "fuencarral_-_el_pardo" .
 
-esgreen:hortaleza a sio:site ;
+esgreen:hortaleza a sio:SpatialRegion ;
     rdfs:label "hortaleza" .
 
-esgreen:latina a sio:site ;
+esgreen:latina a sio:SpatialRegion ;
     rdfs:label "latina" .
 
-esgreen:los_valores_de_altura_media_estan_expresados_en_metros a sio:site ;
+esgreen:los_valores_de_altura_media_estan_expresados_en_metros a sio:SpatialRegion ;
     rdfs:label "los_valores_de_altura_media_estan_expresados_en_metros" .
 
 <https://w3id.org/esgreen/measures-of-collection-of-trees-locatedin-2017-arganzuela-SpatialQuantity-altura_promedio_(m)> a sio:DimensionalQuantity ;
@@ -3875,49 +3875,49 @@ esgreen:measures-of-collection-of-trees-locatedin-2020-villaverde-SpatialQuantit
     sio:hasValue "1636.0"^^xsd:float ;
     sio:measuredAt "2020-01-01"^^xsd:date .
 
-esgreen:moncloa_-_aravaca a sio:site ;
+esgreen:moncloa_-_aravaca a sio:SpatialRegion ;
     rdfs:label "moncloa_-_aravaca" .
 
-esgreen:moratalaz a sio:site ;
+esgreen:moratalaz a sio:SpatialRegion ;
     rdfs:label "moratalaz" .
 
-esgreen:nan a sio:site ;
+esgreen:nan a sio:SpatialRegion ;
     rdfs:label "nan" .
 
-<https://w3id.org/esgreen/no_se_incluyen_los_datos_del_ci6_(parques_historicos,_singulares_y_forestales)> a sio:site ;
+<https://w3id.org/esgreen/no_se_incluyen_los_datos_del_ci6_(parques_historicos,_singulares_y_forestales)> a sio:SpatialRegion ;
     rdfs:label "no_se_incluyen_los_datos_del_ci6_(parques_historicos,_singulares_y_forestales)" .
 
-esgreen:puente_de_vallecas a sio:site ;
+esgreen:puente_de_vallecas a sio:SpatialRegion ;
     rdfs:label "puente_de_vallecas" .
 
-esgreen:retiro a sio:site ;
+esgreen:retiro a sio:SpatialRegion ;
     rdfs:label "retiro" .
 
-esgreen:salamanca a sio:site ;
+esgreen:salamanca a sio:SpatialRegion ;
     rdfs:label "salamanca" .
 
-esgreen:san_blas_-_canillejas a sio:site ;
+esgreen:san_blas_-_canillejas a sio:SpatialRegion ;
     rdfs:label "san_blas_-_canillejas" .
 
-esgreen:tampoco_se_han_considerado_los_arboles_que_dependen_de_las_juntas_municipales_de__distrito a sio:site ;
+esgreen:tampoco_se_han_considerado_los_arboles_que_dependen_de_las_juntas_municipales_de__distrito a sio:SpatialRegion ;
     rdfs:label "tampoco_se_han_considerado_los_arboles_que_dependen_de_las_juntas_municipales_de__distrito" .
 
-esgreen:tetuan a sio:site ;
+esgreen:tetuan a sio:SpatialRegion ;
     rdfs:label "tetuan" .
 
-esgreen:total_general a sio:site ;
+esgreen:total_general a sio:SpatialRegion ;
     rdfs:label "total_general" .
 
-esgreen:usera a sio:site ;
+esgreen:usera a sio:SpatialRegion ;
     rdfs:label "usera" .
 
-esgreen:vicalvaro a sio:site ;
+esgreen:vicalvaro a sio:SpatialRegion ;
     rdfs:label "vicalvaro" .
 
-esgreen:villa_de_vallecas a sio:site ;
+esgreen:villa_de_vallecas a sio:SpatialRegion ;
     rdfs:label "villa_de_vallecas" .
 
-esgreen:villaverde a sio:site ;
+esgreen:villaverde a sio:SpatialRegion ;
     rdfs:label "villaverde" .
 
 sio:LifeStatus a <http://purl.obolibratory.org/ppo/LifeStatus> ;
