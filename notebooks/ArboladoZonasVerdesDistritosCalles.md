@@ -65,9 +65,9 @@ This module describes the data elements related to tree inventory dataset.
 
 
 ### Mapping:
-[Python Script](https://github.com/carlosug/esgreen-kg/blob/main/etl/outputs/generate_rdf2.py)
+[Python Script](https://github.com/carlosug/opengov-kg/blob/main/etl/generate_rdf2.py)
 ### Output:
-[RDF File](https://github.com/carlosug/esgreen-kg/blob/main/etl/outputs/rdflib-output2.ttl)
+[RDF File](https://github.com/carlosug/opengov-kg/blob/main/etl/rdflib-output2.ttl)
 
 ### CHALLENGES AND TODO
 * Remove unnecessary rows as total, num district and aggregate values.
