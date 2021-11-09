@@ -51,19 +51,26 @@ This module describes the data elements related to tree inventiry stored in a bi
 ***
 
 ### Data Description
-
-
-| Original variable name | New variable name | Description                                             | Type   | Use                | SIO Term | Other term |
-| ---------------------- | ----------------- | ------------------------------------------------------- | ------ | ------------------ | --------- | --------- |
-| PARQUE                 | park              | The unique ID name of the park on which tree is located | `string` | To locate the tree | [Site](https://vemonet.github.io/semanticscience/browse/class-siosite.html) |
-| ESPECIE                | scientific_name   | Botanical name for the dominant specie                  | `string` | To group by taxon  | [MaterialEntity](https://vemonet.github.io/semanticscience/browse/class-siomaterialentity.html) | Specie |
-| UNIDADES YEAR          | count             | Number of tree from same type                           | `int`    | To count/sum       | [MemberCount](https://vemonet.github.io/semanticscience/browse/class-siomembercount.html) | |
+    
+  
+| Original variable name           | New variable name | Description                                                  | Type   | Use                            | SIO Term | Other Term |
+| -------------------------------- | ----------------- | ------------------------------------------------------------ | ------ | ------------------------------ | ------- | ---------- |
+| PARQUE                           | park_name         | The unique name of the park on which tree is located         | ``string`` | To locate the tree             |   |  |
+| Altura Promedio (m)              | avgTreeHt         | Average height (m) of all trees in a Park. Calculated as distance from ground level to three top | `int`    | for growth curve or change     | | |
+| Perimetro Promedio (cm)          | avgTreePerim      | Average circumference of all trees in a Park. Diameter * Pi  | ``int``    | Phenology/allometric equations | | |
+| Recién Plantado y no consolidado | n_ageNew          | Number of trees which age is 1 to 5 years                    | ``int``    | Phenology/allometric equations | | |
+| Joven                            | n_ageJuvenile     | Num of trees in juvenile stage                               | `int`    |                                | | |
+| Maduro                           | n_ageAdult        | Num of trees Achieved max. Optimal development               | `int`    |                                | | |
+| Viejo                            | n_ageOld          | Num of trees deprecated age stage                            | `int`    |                                | | |
+| Otros                            | n_others          | Number of trees death and others                             | `int`    |                                | | |
+| Total General                    | subTotalCountPark | Total amount of trees in each park within a city             | `int`    | To count/agg per district      | | |
+| Total                            | totalCountPark    | Total amount of tree in all parks within a city              | `int`    | To count/agg the whole city    | | |
 
 
 ### Mapping:
-[Python Script](https://github.com/carlosug/opengov-kg/blob/main/etl/generate_rdf.py)
+[Python Script](https://github.com/carlosug/opengov-kg/blob/main/etl/generate_rdf2.py)
 ### Output:
-[RDF File](https://github.com/carlosug/opengov-kg/blob/main/etl/outputs/rdflib-output.ttl)
+[RDF File](https://github.com/carlosug/opengov-kg/blob/main/etl/outputs/rdflib-output2.ttl)
 
 ### CHALLENGES AND TODO:
 * Data cleaning: remove latin character and others _(*&(&#))_, unnecessary rows as total and aggregate values. [see data-cleaning.py](https://github.com/carlosug/opengov-kg/blob/main/etl/data-cleaning.py)
