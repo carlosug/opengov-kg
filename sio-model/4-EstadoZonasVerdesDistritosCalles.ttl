@@ -1,86 +1,47 @@
-@prefix esgreen: <https://w3id.org/esgreen/> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix : <http://purl.org/ejp-rd/cde/v1/example-rdf/> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
 @prefix sio: <http://semanticscience.org/resource/> .
-@prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix obo: <http://purl.obolibratory.org/obo> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+
+:identifier_ a sio:SIO_000115 ;
+    sio:SIO_000020 :specimen_role_ ;
+    sio:SIO_000300 "uid_000008"^^xsd:string .
 
 
-esgreen:capricho_de_la_alameda_de_osuna a sio:site ;
-    rdfs:label "capricho_de_la_alameda_de_osuna"^^xsd:string .
+:nombre_distrito  a :District, sio:Township ;
+    sio:label "Moratalaz"^^xsd:string ;
+    sio:contains :collection_especies .
 
-esgreen:collection-of-trees-locatedin-capricho_de_la_alameda_de_osuna a sio:Collection .
+:collection_especies a sio:Collection ;
+    sio:hasAttribute :age_ .
 
-esgreen:collection-of-trees-locatedin-capricho_de_la_alameda_de_osuna-life-Status-joven a sio:LifeStatus,
-        sio:MemberCount ;
-    sio:hasQuality "joven" ;
+:age_ a sio:LifeStatus ;
+    sio:label "Viejo"^^xsd:string ;
+    sio:hasMeasurementValue :statistics_ .
+
+:statistics_ a sio:DimensionalQuantity ;
+    sio:MemberCount :N_Viejo ;
+    sio:Height :H_viejo .
+
+:N_Viejo a sio:MemberCount ;
+    sio:hasValue "12"^^xsd:integer ,
+         "30"^^xsd:integer ,
+         "38"^^xsd:integer ;
     sio:hasUnit obo:UO_0000189 ;
-    sio:hasValue 558.0,
-        668.0 ;
-    sio:measuredAt "2018-01-01"^^xsd:date,
-        "2019-01-01"^^xsd:date .
-
-esgreen:collection-of-trees-locatedin-capricho_de_la_alameda_de_osuna-life-Status-joven a sio:DimensionalQuantity ;
-    sio:hasQuality "joven" ;
-    sio:hasUnit obo:UO_0000007 ;
-    sio:hasValue "40.0"^^xsd:float ;
-    sio:measuredAt "2017-01-01"^^xsd:date .
+    sio:measuredAt "2017-01-01"^^xsd:date,
+        "2019-01-01"^^xsd:date,
+        "2020-01-01"^^xsd:date .
 
 
+:H_viejo a sio:Mean ;
+    sio:hasValue "272.0"^^xsd:float ,
+         "303.0"^^xsd:float ,
+         "328.0"^^xsd:float ;
+    sio:hasUnit obo:UO_0000008 ; # mts
+    sio:measuredAt "2017-01-01"^^xsd:date,
+        "2019-01-01"^^xsd:date,
+        "2020-01-01"^^xsd:date .
+        
 
-# :parque a sio:Site ;
-#     sio:isLocatedIn :georeferencing ;
-#     :label "dehesa_de_la_villa"^^xsd:string ;
-#     sio:collection  :parque_especie .
-
-
-# :parque_especie a sio:collection ;
-#     dc:title "Retiro-Populus_nigra"^^xsd:string ;
-#     sio:hasAttribute :age .
-
-# :age a sio:LifeStatus ;
-#     sio:hasAttribute :unidades .
-
-# :unidades a sio:MemberCount ;
-#     sio:hasValue "unidades_year"^^xsd:integer ;
-#     sio:hasUnit obo:UO_0000189 ;
-#     sio:measuredAt "_year"^^xsd:date .
-
-
-# # <!-- map UniqueIdentifier with WIKI and gbif database -->
-
-# :especie a :habitatSpecies ;
-# # :especie a sio:Object .
-#     sio:UniqueIdentifier :key ;
-#     sio:label :especie_name ;
-#     :seeAlso wiki:especie_name .
-
-
-
-# * Expected triples:
-
-
-# ######## Turtle syntax ########
-# ```rdf
-# :PARQUE rdf:type sio:Site .
-# :PARQUE sio:contains :collection-of-ESPECIE-STATUS .
-# :collection-of-ESPECIE-STATUS rdf:type sio:Collection .
-# :collection-of-trees sio:hasAttribute :age .
-# :age a :subClassOf sio:dimensional-quantity .
-# :age sio: has-label :lifeCycleInfo .
-# :lifeCycleInfo sio:has-label "Recien plantado y no consolidado" .
-# :Recien plantado y no consolidado a sio:memberCount .
-# :membercount sio:has-value "Recien plantado y no consolidado" .
-# :lifeCycleInfo sio:has-label "Recien plantado y no consolidado" .
-# :Recien plantado y no consolidado a sio:memberCount .
-# :membercount sio:has-value "Recien plantado y no consolidado" .
-# :lifeCycleInfo sio:has-label "Joven" .
-# :Joven a sio:memberCount .
-# :membercount sio:has-value "Joven" .  
-# :collection-of-trees sio:hasAttribute : Maduro .
-# :Maduro a sio:mean .
-# :Maduro sio: has-value "Maduro" .
-# :collection-of-trees sio:hasAttribute : Viejo .
-# :Viejo a sio:mean .
-# :Viejo sio: has-value "Viejo" .

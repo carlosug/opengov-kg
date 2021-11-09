@@ -14,34 +14,51 @@ This module describes the data elements related to tree inventiry stored in a bi
 
 ```ttl
 
-@prefix esgreen: <https://w3id.org/esgreen/> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix : <http://purl.org/ejp-rd/cde/v1/example-rdf/> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
 @prefix sio: <http://semanticscience.org/resource/> .
-@prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix obo: <http://purl.obolibratory.org/obo> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+
+:identifier_ a sio:SIO_000115 ;
+    sio:SIO_000020 :specimen_role_ ;
+    sio:SIO_000300 "uid_000008"^^xsd:string .
 
 
-esgreen:capricho_de_la_alameda_de_osuna a sio:site ;
-    rdfs:label "capricho_de_la_alameda_de_osuna"^^xsd:string .
+:nombre_distrito  a :District, sio:Township ;
+    sio:label "Moratalaz"^^xsd:string ;
+    sio:contains :collection_especies .
 
-esgreen:collection-of-trees-locatedin-capricho_de_la_alameda_de_osuna a sio:Collection .
+:collection_especies a sio:Collection ;
+    sio:hasAttribute :age_ .
 
-esgreen:collection-of-trees-locatedin-capricho_de_la_alameda_de_osuna-life-Status-joven a sio:LifeStatus,
-        sio:MemberCount ;
-    sio:hasQuality "joven" ;
+:age_ a sio:LifeStatus ;
+    sio:label "Viejo"^^xsd:string ;
+    sio:hasMeasurementValue :statistics_ .
+
+:statistics_ a sio:DimensionalQuantity ;
+    sio:MemberCount :N_Viejo ;
+    sio:Height :H_viejo .
+
+:N_Viejo a sio:MemberCount ;
+    sio:hasValue "12"^^xsd:integer ,
+         "30"^^xsd:integer ,
+         "38"^^xsd:integer ;
     sio:hasUnit obo:UO_0000189 ;
-    sio:hasValue 558.0,
-        668.0 ;
-    sio:measuredAt "2018-01-01"^^xsd:date,
-        "2019-01-01"^^xsd:date .
+    sio:measuredAt "2017-01-01"^^xsd:date,
+        "2019-01-01"^^xsd:date,
+        "2020-01-01"^^xsd:date .
 
-esgreen:collection-of-trees-locatedin-capricho_de_la_alameda_de_osuna-life-Status-joven a sio:DimensionalQuantity ;
-    sio:hasQuality "joven" ;
-    sio:hasUnit obo:UO_0000007 ;
-    sio:hasValue "40.0"^^xsd:float ;
-    sio:measuredAt "2017-01-01"^^xsd:date .
+
+:H_viejo a sio:Mean ;
+    sio:hasValue "272.0"^^xsd:float ,
+         "303.0"^^xsd:float ,
+         "328.0"^^xsd:float ;
+    sio:hasUnit obo:UO_0000008 ; # mts
+    sio:measuredAt "2017-01-01"^^xsd:date,
+        "2019-01-01"^^xsd:date,
+        "2020-01-01"^^xsd:date .
 
 ```
 
@@ -72,8 +89,4 @@ esgreen:collection-of-trees-locatedin-capricho_de_la_alameda_de_osuna-life-Statu
 [RDF File](https://github.com/carlosug/opengov-kg/blob/main/etl/outputs/rdflib-output4.ttl)
 
 ### CHALLENGES AND TODO:
-* Data cleaning: remove latin character and others _(*&(&#))_, unnecessary rows as total and aggregate values. [see data-cleaning.py](https://github.com/carlosug/opengov-kg/blob/main/etl/data-cleaning.py)
-* All entities uses SIO schema but **specie** is not clear yet.
-* The issue will be to map each entity with global identifier within biodiversity database (e.g. wikidata API such https://www.wikidata.org/w/api.php?action=wbsearchentities&search=pinus&language=en or https://www.gbif.org/species/2684241). [see data-argumentation.py](https://github.com/carlosug/opengov-kg/blob/main/etl/data-argumentation.py)
-* Inconsistency file and variable names and therefore harmonization of the entity names.
-* **Data Argumentation with georeferencing parks and taxo, family and other related terms from scientificname.** [see unique-species.py](https://github.com/carlosug/opengov-kg/blob/main/etl/unique-species.py)
+* Average has cts and mts so python mapping script has function to take it into account.
