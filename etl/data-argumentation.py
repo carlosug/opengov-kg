@@ -33,7 +33,7 @@ for file_date in file_dates:
             unique_especies.append(especie)
 
 #specie = 'aesculus_hippocastanum'
-
+# for gbif: https://data-blog.gbif.org/post/downloading-long-species-lists-on-gbif/
     for specie in unique_especies:
         res = requests.get(f'https://www.wikidata.org/w/api.php?action=wbsearchentities&search={specie}&language=en&format=json')
         print(specie,res.json())
